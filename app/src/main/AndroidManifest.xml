@@ -3,13 +3,14 @@
     package="com.hunterdavis.adventureneverstops" >
 
     <application
+        android:name=".ANSApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".GameSelectActivity"
+            android:name=".activities.GameSelectActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
