@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="types_of_land">
+        <item>plains</item>
+        <item>savannah</item>
+        <item>mountains</item>
+        <item>city</item>
+        <item>countryside</item>
+        <item>township</item>
+        <item>high court</item>
+        <item>sky kingdom</item>
+        <item>far east</item>
+        <item>midwest</item>
+        <item>pacific</item>
+        <item>atlantic</item>
+        <item>ocean</item>
+        <item>sea</item>
+        <item>coast</item>
+        <item>swamp</item>
+        <item>sound</item>
+        <item>realms of outer space</item>
+        <item>ninth dimension</item>
+        <item>realms of inner space</item>
+        <item>britannia</item>
+        <item>realm of xanadu</item>
+        <item>realm valhalla</item>
+    </string-array>
+</resources>

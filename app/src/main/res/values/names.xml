@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="prefixes">
+        <item>Sir</item>
+        <item>Madame</item>
+        <item>Senior</item>
+        <item>Seniorita</item>
+        <item>Judge</item>
+        <item>Doctor</item>
+        <item>High Ruler</item>
+        <item>Custodian</item>
+        <item>Principal</item>
+    </string-array>
+
+    <string-array name="base_vowels">
+        <item>a</item>
+        <item>e</item>
+        <item>i</item>
+        <item>o</item>
+        <item>u</item>
+        <item>0</item>
+        <item>\@</item>
+    </string-array>
+
+    <string-array name="base_consonents">
+        <item>q</item>
+        <item>w</item>
+        <item>r</item>
+        <item>t</item>
+        <item>y</item>
+        <item>p</item>
+        <item>s</item>
+        <item>d</item>
+        <item>f</item>
+        <item>g</item>
+        <item>h</item>
+        <item>j</item>
+        <item>k</item>
+        <item>l</item>
+        <item>z</item>
+        <item>x</item>
+        <item>c</item>
+        <item>v</item>
+        <item>b</item>
+        <item>n</item>
+        <item>m</item>
+    </string-array>
+
+    <string-array name="suffixes">
+        <item>The First</item>
+        <item>The Second</item>
+        <item>The Third</item>
+        <item>The Fourth</item>
+        <item>The Fifth</item>
+        <item>The Sixth</item>
+        <item>The Seventh</item>
+        <item>The Eight</item>
+        <item>The Ninth</item>
+        <item>Esquire</item>
+        <item>Ltd.</item>
+        <item>TM</item>
+        <item>Patent Pending</item>
+
+    </string-array>
+
+    <string-array name="title_prefixes">
+        <item>of the</item>
+    </string-array>
+
+
+
+
+</resources>

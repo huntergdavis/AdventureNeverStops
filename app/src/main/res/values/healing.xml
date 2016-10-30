@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="healing">
+        <item>healing potion</item>
+        <item>healing ray</item>
+        <item>jar of healing</item>
+        <item>healing salve</item>
+        <item>medicated herb</item>
+        <item>medicated salve</item>
+        <item>x-ray juice</item>
+        <item>hard liquer</item>
+        <item>pills</item>
+        <item>sandwhich</item>
+        <item>milkshake</item>
+        <item>ice cream</item>
+        <item>cake</item>
+        <item>bandages</item>
+        <item>splint</item>
+        <item>gene splice</item>
+    </string-array>
+    <string-array name="magichealing">
+        <item>magic potion</item>
+        <item>magic up ray</item>
+        <item>jar of magic juice</item>
+        <item>magic salve</item>
+        <item>magic herb</item>
+        <item>magic lamp</item>
+        <item>fairy dust</item>
+        <item>magic dust</item>
+        <item>magic beans</item>
+        <item>dark material</item>
+        <item>flame powder</item>
+    </string-array>
+</resources>
