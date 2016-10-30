@@ -10,6 +10,6 @@ public class NameUtils {
     }
 
     public static String generatePlayerName(String baseSeed) {
-        return baseSeed;
+        return baseSeed + "hunter";
     }
 }

@@ -9,4 +9,8 @@ public class AllGames {
 
     public ArrayList<GameState> gameStates;
 
+    public AllGames() {
+        gameStates = new ArrayList<>();
+    }
+
 }
