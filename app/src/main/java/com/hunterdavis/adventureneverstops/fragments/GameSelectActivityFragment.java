@@ -46,6 +46,8 @@ public class GameSelectActivityFragment extends Fragment {
         adapter=new SaveGameRecyclerViewAdapter();
         saveGameRecyclerView.setAdapter(adapter);
 
+
+
         return view;
     }
 
@@ -53,5 +55,6 @@ public class GameSelectActivityFragment extends Fragment {
     public void updatedSaveGames(GameAddedEvent event) {
         adapter.notifyDataSetChanged();
         adapter.notifyItemRangeChanged(ANSApplication.getSaveGameCount(),1, event.state);
+        saveGameRecyclerView.smoothScrollToPosition(ANSApplication.getSaveGameCount()-1);
     }
 }
