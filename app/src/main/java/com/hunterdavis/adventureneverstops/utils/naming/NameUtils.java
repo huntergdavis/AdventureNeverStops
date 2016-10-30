@@ -1,12 +1,7 @@
 package com.hunterdavis.adventureneverstops.utils.naming;
 
-import android.content.res.Resources;
-
-import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
 import com.hunterdavis.adventureneverstops.utils.ArrayUtils;
-
-import java.lang.reflect.Array;
 
 /**
  * Created by hunter on 10/30/16.

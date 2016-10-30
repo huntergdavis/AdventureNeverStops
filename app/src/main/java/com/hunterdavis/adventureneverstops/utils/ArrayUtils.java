@@ -3,7 +3,6 @@ package com.hunterdavis.adventureneverstops.utils;
 import android.content.res.Resources;
 
 import com.hunterdavis.adventureneverstops.ANSApplication;
-import com.hunterdavis.adventureneverstops.R;
 
 import java.util.Random;
 
