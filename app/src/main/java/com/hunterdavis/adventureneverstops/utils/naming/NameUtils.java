@@ -31,27 +31,27 @@ public class NameUtils {
 
 
     public static String consonent() {
-        return ArrayUtils.getRandom(R.array.base_consonents);
+        return ArrayUtils.getRandomFromStringArray(R.array.base_consonents);
     }
 
     public static String vowel() {
-        return ArrayUtils.getRandom(R.array.base_vowels);
+        return ArrayUtils.getRandomFromStringArray(R.array.base_vowels);
     }
 
     public static String prefix() {
-        return ArrayUtils.getRandom(R.array.prefixes);
+        return ArrayUtils.getRandomFromStringArray(R.array.prefixes);
     }
 
     public static String suffixTitleModifier() {
 
-        return ArrayUtils.getRandom(R.array.title_prefixes);
+        return ArrayUtils.getRandomFromStringArray(R.array.title_prefixes);
     }
 
     public static String suffix() {
-        return ArrayUtils.getRandom(R.array.suffixes);
+        return ArrayUtils.getRandomFromStringArray(R.array.suffixes);
     }
 
     public static String metalAndLandType() {
-        return ArrayUtils.getRandom(R.array.metals) + " " + ArrayUtils.getRandom(R.array.types_of_land);
+        return ArrayUtils.getRandomFromStringArray(R.array.metals) + " " + ArrayUtils.getRandomFromStringArray(R.array.types_of_land);
     }
 }
