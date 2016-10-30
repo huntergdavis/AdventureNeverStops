@@ -1,6 +1,7 @@
 package com.hunterdavis.adventureneverstops;
 
 import android.app.Application;
+import android.content.res.Resources;
 
 import com.hunterdavis.adventureneverstops.events.GameAddedEvent;
 import com.hunterdavis.adventureneverstops.objects.game.AllGames;
@@ -14,8 +15,19 @@ public class ANSApplication extends Application {
     private static AllGames TheGames = new AllGames();
     private static Bus eventBus = new Bus();
 
+    private static ANSApplication applicationInstance;
+
     public ANSApplication() {
         super();
+        applicationInstance = this;
+    }
+
+    public static ANSApplication getApplicationInstance() {
+        return applicationInstance;
+    }
+
+    public static Resources getApplicationResources() {
+        return applicationInstance.getApplicationContext().getResources();
     }
 
     public static Bus getEventBus() {
