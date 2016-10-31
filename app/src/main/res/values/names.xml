@@ -19,8 +19,6 @@
         <item>i</item>
         <item>o</item>
         <item>u</item>
-        <item>0</item>
-        <item>\@</item>
     </string-array>
 
     <string-array name="base_consonents">
@@ -58,10 +56,6 @@
         <item>The Eight</item>
         <item>The Ninth</item>
         <item>Esquire</item>
-        <item>Ltd.</item>
-        <item>TM</item>
-        <item>Patent Pending</item>
-
     </string-array>
 
     <string-array name="title_prefixes">

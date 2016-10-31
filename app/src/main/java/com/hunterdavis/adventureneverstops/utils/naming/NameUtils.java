@@ -1,6 +1,7 @@
 package com.hunterdavis.adventureneverstops.utils.naming;
 
 import com.hunterdavis.adventureneverstops.R;
+import com.hunterdavis.adventureneverstops.objects.game.Name;
 import com.hunterdavis.adventureneverstops.utils.ArrayUtils;
 
 /**
@@ -8,25 +9,30 @@ import com.hunterdavis.adventureneverstops.utils.ArrayUtils;
  */
 public class NameUtils {
 
-    public static String generatePlayerName() {
+    public static Name generatePlayerName() {
         return generatePlayerName("");
     }
 
-    public static String generatePlayerName(String baseSeed) {
-        return prefix() + " " +
-                generateFirstNaame(baseSeed) + " "  +
-                generateLastNaame() + " " +
-                suffix() + " " +
-                suffixTitleModifier() + " " +
-                metalAndLandType();
+    public static Name generatePlayerName(String baseSeed) {
+        return new Name(prefix(),
+                generateFirstNaame(baseSeed),
+                generateLastNaame(),
+                suffix(),
+                suffixTitleModifier(),
+                metal(),
+                landType());
+    }
+
+    public static String capitolizeFirstLetter(String a) {
+        return a.substring(0, 1).toUpperCase() + a.substring(1).toLowerCase();
     }
 
     public static String generateFirstNaame(String baseSeed) {
-        return consonent() + vowel() + vowel() + baseSeed + consonent() + vowel() + consonent();
+        return capitolizeFirstLetter(consonent() + vowel() + vowel() + baseSeed + consonent() + vowel() + consonent());
     }
 
     public static String generateLastNaame() {
-        return vowel() + consonent() + vowel() + consonent() + vowel() + vowel() + consonent();
+        return capitolizeFirstLetter(vowel() + consonent() + vowel() + consonent() + vowel() + vowel() + consonent());
     }
 
 
@@ -51,7 +57,12 @@ public class NameUtils {
         return ArrayUtils.getRandomFromStringArray(R.array.suffixes);
     }
 
-    public static String metalAndLandType() {
-        return ArrayUtils.getRandomFromStringArray(R.array.metals) + " " + ArrayUtils.getRandomFromStringArray(R.array.types_of_land);
+    public static String metal() {
+        return ArrayUtils.getRandomFromStringArray(R.array.metals);
+    }
+
+    public static String landType() {
+        return ArrayUtils.getRandomFromStringArray(R.array.types_of_land);
+
     }
 }

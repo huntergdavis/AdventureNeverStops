@@ -36,8 +36,8 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
     @Override
     public void onBindViewHolder(SaveGameViewHolder holder, int position) {
         GameState gameState = ANSApplication.getAllGames().gameStates.get(position);
-        holder.heroName.setText(gameState.currentPlayer.hero.name);
-        holder.gameName.setText(gameState.currentPlayer.name);
+        holder.heroName.setText(gameState.currentPlayer.hero.name.displayName());
+        holder.gameName.setText(gameState.currentPlayer.name.displayName());
     }
 
     @Override

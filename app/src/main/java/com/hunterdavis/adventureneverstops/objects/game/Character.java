@@ -7,14 +7,14 @@ import com.hunterdavis.adventureneverstops.utils.naming.NameUtils;
  */
 public class Character {
 
-    public String name;
+    public Name name;
 
     public Character() {
         this.name = NameUtils.generatePlayerName();
     }
 
     public Character(Character c) {
-        this.name = c.name;
+        this.name = new Name(c.name);
     }
 
     public static Character generateCharacter() {
