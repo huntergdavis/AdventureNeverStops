@@ -14,4 +14,19 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="SaveGameListItemText">
+        <item name="android:textColor">@color/SaveGameListTextColor</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="SaveGameListItem">
+        <item name="android:background">@drawable/save_game_background</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:padding">@dimen/save_game_margin</item>
+
+
+    </style>
+
 </resources>

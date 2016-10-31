@@ -2,18 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-    android:layout_margin="@dimen/save_game_margin"
+    style="@style/SaveGameListItem"
     >
 
     <TextView
+        android:text="Hunter Davis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/SaveGameListItemText"
         android:id="@+id/game_name"/>
 
     <TextView
+        android:text="@string/champion_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textSize="12sp"
+        style="@style/SaveGameListItemText"
+
+        android:id="@+id/champion_text"/>
+
+    <TextView
+        android:text="Heracles Son of Zeus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        style="@style/SaveGameListItemText"
         android:id="@+id/hero_name"/>
+
+    <TextView
+        android:text="100 XP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SaveGameListItemText"
+        android:id="@+id/hero_experience"
+        android:textAlignment="viewEnd"
+        android:layout_gravity="end"/>
+
 
 </LinearLayout>

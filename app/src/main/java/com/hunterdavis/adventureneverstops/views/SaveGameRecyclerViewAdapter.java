@@ -38,6 +38,8 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
         GameState gameState = ANSApplication.getAllGames().gameStates.get(position);
         holder.heroName.setText(gameState.currentPlayer.hero.name.displayName());
         holder.gameName.setText(gameState.currentPlayer.name.displayName());
+        holder.heroExp.setText(gameState.currentPlayer.hero.experience + " " + ANSApplication.getApplicationResources().getString(R.string.xp));
+
     }
 
     @Override
@@ -49,6 +51,8 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
 
         @BindView(R.id.game_name) public TextView gameName;
         @BindView(R.id.hero_name) public TextView heroName;
+        @BindView(R.id.hero_experience) public TextView heroExp;
+
 
         public SaveGameViewHolder(View itemView) {
             super(itemView);

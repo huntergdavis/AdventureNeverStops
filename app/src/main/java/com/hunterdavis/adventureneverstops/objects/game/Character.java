@@ -8,13 +8,16 @@ import com.hunterdavis.adventureneverstops.utils.naming.NameUtils;
 public class Character {
 
     public Name name;
+    public long experience;
 
     public Character() {
         this.name = NameUtils.generatePlayerName();
+        this.experience = 0;
     }
 
     public Character(Character c) {
         this.name = new Name(c.name);
+        this.experience = c.experience;
     }
 
     public static Character generateCharacter() {
