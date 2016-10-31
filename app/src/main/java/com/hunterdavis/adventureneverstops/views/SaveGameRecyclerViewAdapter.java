@@ -8,10 +8,12 @@ import android.widget.TextView;
 
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
+import com.hunterdavis.adventureneverstops.dialogs.SaveGameDialogs;
 import com.hunterdavis.adventureneverstops.objects.game.GameState;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by hunter on 10/30/16.
@@ -36,10 +38,7 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
     @Override
     public void onBindViewHolder(SaveGameViewHolder holder, int position) {
         GameState gameState = ANSApplication.getAllGames().gameStates.get(position);
-        holder.heroName.setText(gameState.currentPlayer.hero.name.displayName());
-        holder.gameName.setText(gameState.currentPlayer.name.displayName());
-        holder.heroExp.setText(gameState.currentPlayer.hero.experience + " " + ANSApplication.getApplicationResources().getString(R.string.xp));
-
+        holder.updateWithGameStateandPosition(gameState,position);
     }
 
     @Override
@@ -53,10 +52,29 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
         @BindView(R.id.hero_name) public TextView heroName;
         @BindView(R.id.hero_experience) public TextView heroExp;
 
+        public long exp;
+        public String fullName;
+        public int position;
+
 
         public SaveGameViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
+
+        public void updateWithGameStateandPosition(GameState gameState, int position) {
+            this.position = position;
+            heroName.setText(gameState.currentPlayer.hero.name.displayName());
+            gameName.setText(gameState.currentPlayer.name.displayName());
+            heroExp.setText(gameState.currentPlayer.hero.experience + " " + ANSApplication.getApplicationResources().getString(R.string.xp));
+            exp = gameState.currentPlayer.hero.experience;
+            fullName = gameState.currentPlayer.name.fullName();
+        }
+
+        @OnClick(R.id.delete_save)
+        public void deleteSaveGame() {
+            SaveGameDialogs.promptToDeleteSaveGame(ANSApplication.getApplicationInstance().currentActivity, exp, fullName, position);
+        }
+
     }
 }

@@ -13,11 +13,13 @@ import android.widget.ListView;
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
 import com.hunterdavis.adventureneverstops.events.GameAddedEvent;
+import com.hunterdavis.adventureneverstops.events.GameDeletedEvent;
 import com.hunterdavis.adventureneverstops.views.SaveGameRecyclerViewAdapter;
 import com.squareup.otto.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -41,6 +43,7 @@ public class GameSelectActivityFragment extends Fragment {
         ButterKnife.bind(this,view);
 
         layoutManager=new LinearLayoutManager(getActivity());
+        ((LinearLayoutManager)layoutManager).setStackFromEnd(true);
         saveGameRecyclerView.setLayoutManager(layoutManager);
 
         adapter=new SaveGameRecyclerViewAdapter();
@@ -54,7 +57,22 @@ public class GameSelectActivityFragment extends Fragment {
     @Subscribe
     public void updatedSaveGames(GameAddedEvent event) {
         adapter.notifyDataSetChanged();
-        adapter.notifyItemRangeChanged(ANSApplication.getSaveGameCount(),1, event.state);
-        saveGameRecyclerView.smoothScrollToPosition(ANSApplication.getSaveGameCount()-1);
+        adapter.notifyItemRangeChanged(0,1, event.state);
+        saveGameRecyclerView.smoothScrollToPosition(0);
+    }
+
+
+    @Subscribe
+    public void saveGameDeleted(GameDeletedEvent event) {
+        ANSApplication.deleteSaveGame(event.index);
+        adapter.notifyDataSetChanged();
+        adapter.notifyItemRangeChanged(event.index,1);
+        saveGameRecyclerView.smoothScrollToPosition(event.index);
+    }
+
+
+    @Subscribe
+    public void deleteSaveGame(GameDeletedEvent event) {
+
     }
 }

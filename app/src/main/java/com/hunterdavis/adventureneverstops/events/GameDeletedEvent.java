@@ -5,4 +5,10 @@ package com.hunterdavis.adventureneverstops.events;
  */
 
 public class GameDeletedEvent {
+
+    public int index;
+
+    public GameDeletedEvent(int index) {
+        this.index = index;
+    }
 }

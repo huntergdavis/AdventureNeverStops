@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
 
-public class GameSelectActivity extends AppCompatActivity {
+public class GameSelectActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
