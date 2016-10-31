@@ -8,8 +8,7 @@
     <string name="save_game_delete_button">Delete</string>
     <string name="save_game_delete_question_title">Delete?</string>
     <string name="save_game_delete_question">Delete %1$s?  That\'s %2$d experience gone forever.</string>
-
-
+    <string name="title_activity_game_view">GameView</string>
 
 
 </resources>

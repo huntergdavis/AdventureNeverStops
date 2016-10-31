@@ -1,5 +1,6 @@
-package com.hunterdavis.adventureneverstops.views;
+package com.hunterdavis.adventureneverstops.adapters;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
+import com.hunterdavis.adventureneverstops.activities.GameView;
 import com.hunterdavis.adventureneverstops.dialogs.SaveGameDialogs;
 import com.hunterdavis.adventureneverstops.objects.game.GameState;
 
@@ -74,6 +76,13 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
         @OnClick(R.id.delete_save)
         public void deleteSaveGame() {
             SaveGameDialogs.promptToDeleteSaveGame(ANSApplication.getApplicationInstance().currentActivity, exp, fullName, position);
+        }
+
+        @OnClick(R.id.save_game_item)
+        public void goToSaveGame() {
+            Intent intent = new Intent(ANSApplication.getApplicationInstance().currentActivity, GameView.class);
+            intent.putExtra(GameView.EXTRA_SAVE_NUMBER, position);
+            ANSApplication.getApplicationInstance().currentActivity.startActivity(intent);
         }
 
     }

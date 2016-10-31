@@ -7,19 +7,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
 import com.hunterdavis.adventureneverstops.events.GameAddedEvent;
 import com.hunterdavis.adventureneverstops.events.GameDeletedEvent;
-import com.hunterdavis.adventureneverstops.views.SaveGameRecyclerViewAdapter;
+import com.hunterdavis.adventureneverstops.adapters.SaveGameRecyclerViewAdapter;
 import com.squareup.otto.Subscribe;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -48,8 +45,6 @@ public class GameSelectActivityFragment extends Fragment {
 
         adapter=new SaveGameRecyclerViewAdapter();
         saveGameRecyclerView.setAdapter(adapter);
-
-
 
         return view;
     }
