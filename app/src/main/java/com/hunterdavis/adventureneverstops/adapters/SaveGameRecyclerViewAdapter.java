@@ -66,11 +66,11 @@ public class SaveGameRecyclerViewAdapter extends RecyclerView.Adapter<SaveGameRe
 
         public void updateWithGameStateandPosition(GameState gameState, int position) {
             this.position = position;
-            heroName.setText(gameState.currentPlayer.hero.name.displayName());
-            gameName.setText(gameState.currentPlayer.name.displayName());
+            heroName.setText(gameState.currentPlayer.hero.bio.displayName());
+            gameName.setText(gameState.currentPlayer.bio.displayName());
             heroExp.setText(gameState.currentPlayer.hero.experience + " " + ANSApplication.getApplicationResources().getString(R.string.xp));
             exp = gameState.currentPlayer.hero.experience;
-            fullName = gameState.currentPlayer.name.fullName();
+            fullName = gameState.currentPlayer.bio.fullName();
         }
 
         @OnClick(R.id.delete_save)

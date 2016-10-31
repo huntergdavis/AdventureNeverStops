@@ -5,7 +5,7 @@ import com.hunterdavis.adventureneverstops.utils.naming.NameUtils;
 import java.util.ArrayList;
 
 public class Player {
-    public Name name;
+    public Bio bio;
 
     // A player has a singluar 'hero', the main character in the journey
     public Character hero = null;
@@ -19,7 +19,7 @@ public class Player {
 
 
     public Player() {
-        this.name = NameUtils.generatePlayerName();
+        this.bio = NameUtils.generatePlayerName();
         this.hero = Character.generateCharacter();
 
         this.army = new ArrayList<>(defaultNumberOfArmies);
@@ -31,7 +31,7 @@ public class Player {
     }
 
     public Player(Player p2) {
-        this.name = new Name(p2.name);
+        this.bio = new Bio(p2.bio);
         this.hero = new Character(p2.hero);
 
         this.army = new ArrayList<>(p2.army.size());

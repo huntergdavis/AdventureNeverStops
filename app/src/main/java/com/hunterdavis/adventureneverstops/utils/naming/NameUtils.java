@@ -1,7 +1,7 @@
 package com.hunterdavis.adventureneverstops.utils.naming;
 
 import com.hunterdavis.adventureneverstops.R;
-import com.hunterdavis.adventureneverstops.objects.game.Name;
+import com.hunterdavis.adventureneverstops.objects.game.Bio;
 import com.hunterdavis.adventureneverstops.utils.ArrayUtils;
 
 /**
@@ -9,12 +9,12 @@ import com.hunterdavis.adventureneverstops.utils.ArrayUtils;
  */
 public class NameUtils {
 
-    public static Name generatePlayerName() {
+    public static Bio generatePlayerName() {
         return generatePlayerName("");
     }
 
-    public static Name generatePlayerName(String baseSeed) {
-        return new Name(prefix(),
+    public static Bio generatePlayerName(String baseSeed) {
+        return new Bio(prefix(),
                 generateFirstNaame(baseSeed),
                 generateLastNaame(),
                 suffix(),

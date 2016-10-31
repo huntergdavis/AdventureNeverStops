@@ -11,4 +11,11 @@
     <string name="title_activity_game_view">GameView</string>
 
 
+    <string name="family_backstory_string">%1$s was born into the clan %2$s.</string>
+    <string name="family_ability_string">%1$s was born with special abilities, one of which is the ability to control %2$s, a genetic quirk unique to the clan %3$s.</string>
+    <string name="homeland_string">%1$s hails from %2$s, ancestral home to the clan %3$s.</string>
+    <string name="suffix_string">%1$s in a line of proud warriors, %2$s carries the weight of history.</string>
+    <string name="experience_string">With only %1$d experience, %2$s has a long way to go to become a great warrior.</string>
+    <string name="backstory_title_string">This is the tale of %1$s</string>
+
 </resources>

@@ -4,7 +4,7 @@ package com.hunterdavis.adventureneverstops.objects.game;
  * Created by hunter on 10/30/16.
  */
 
-public class Name {
+public class Bio {
 
     public String prefix;
     public String first;
@@ -14,7 +14,7 @@ public class Name {
     public String metal;
     public String landType;
 
-    public Name(String pre, String fir, String las, String suf, String sufTit, String met, String land) {
+    public Bio(String pre, String fir, String las, String suf, String sufTit, String met, String land) {
         this.prefix = pre;
         this.first = fir;
         this.suffix = suf;
@@ -24,7 +24,7 @@ public class Name {
         this.landType = land;
     }
 
-    public Name(Name n1) {
+    public Bio(Bio n1) {
         this.prefix = n1.prefix;
         this.first = n1.first;
         this.suffix = n1.suffix;

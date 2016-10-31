@@ -42,6 +42,10 @@ public class ANSApplication extends Application {
         return TheGames;
     }
 
+    public static GameState getGame(int game) {
+        return TheGames.gameStates.get(game);
+    }
+
     public static int getSaveGameCount() {
         return TheGames.gameStates.size();
     }
