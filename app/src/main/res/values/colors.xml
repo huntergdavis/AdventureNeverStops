@@ -8,4 +8,6 @@
 
     <color name="saveGameBackground">#979aaa</color>
     <color name="SaveGameListTextColor">@android:color/white</color>
+    <color name="SaveGameDeleteButtonColor">#E50000</color>
+
 </resources>

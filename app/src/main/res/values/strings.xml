@@ -5,6 +5,8 @@
     <string name="xp">XP</string>
     <string name="champion_header">and the champion of the land:</string>
     <string name="save_game_header_text">Choose Yo Story Time!</string>
+    <string name="save_game_delete_button">Delete</string>
+
 
 
 </resources>

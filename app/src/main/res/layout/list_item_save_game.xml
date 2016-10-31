@@ -5,6 +5,7 @@
     style="@style/SaveGameListItem"
     >
 
+
     <TextView
         android:text="Hunter Davis"
         android:layout_width="wrap_content"
@@ -30,14 +31,38 @@
         style="@style/SaveGameListItemText"
         android:id="@+id/hero_name"/>
 
-    <TextView
-        android:text="100 XP"
-        android:layout_width="wrap_content"
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/SaveGameListItemText"
-        android:id="@+id/hero_experience"
-        android:textAlignment="viewEnd"
-        android:layout_gravity="end"/>
+        android:orientation="horizontal">
+        <TextView
+            android:text="100 XP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SaveGameListItemText"
+            android:id="@+id/hero_experience"
+            android:textAlignment="viewStart"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="start"/>
+
+
+        <TextView
+            android:text="@string/save_game_delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            style="@style/SaveGameListItemText"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="end"
+            android:background="@drawable/save_game_delete_background"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/delete_save"/>
+
+    </RelativeLayout>
 
 
 </LinearLayout>
