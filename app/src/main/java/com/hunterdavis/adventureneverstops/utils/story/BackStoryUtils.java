@@ -3,12 +3,13 @@ package com.hunterdavis.adventureneverstops.utils.story;
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
 import com.hunterdavis.adventureneverstops.objects.game.Character;
+import com.hunterdavis.adventureneverstops.utils.StringUtils;
 
 /**
  * Created by hunter on 10/31/16.
  */
 
-public class BackStoryUtils {
+public class BackStoryUtils extends StringUtils {
 
 
     public static String generateBackStory(Character c) {

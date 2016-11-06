@@ -42,9 +42,9 @@ public class Bio {
         return  prefix + " " +
                 first + " "  +
                 last + " " +
-                suffix + " " +
+                suffix.toLowerCase() + " " +
                 suffixTitleModifier + " " +
-                metal + " " +
+                metal.toLowerCase() + " " +
                 landType;
     }
 }

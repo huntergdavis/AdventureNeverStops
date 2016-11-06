@@ -3,11 +3,12 @@ package com.hunterdavis.adventureneverstops.utils.naming;
 import com.hunterdavis.adventureneverstops.R;
 import com.hunterdavis.adventureneverstops.objects.game.Bio;
 import com.hunterdavis.adventureneverstops.utils.ArrayUtils;
+import com.hunterdavis.adventureneverstops.utils.StringUtils;
 
 /**
  * Created by hunter on 10/30/16.
  */
-public class NameUtils {
+public class NameUtils extends StringUtils {
 
     public static Bio generatePlayerName() {
         return generatePlayerName("");
@@ -23,9 +24,6 @@ public class NameUtils {
                 landType());
     }
 
-    public static String capitolizeFirstLetter(String a) {
-        return a.substring(0, 1).toUpperCase() + a.substring(1).toLowerCase();
-    }
 
     public static String generateFirstNaame(String baseSeed) {
         return capitolizeFirstLetter(consonent() + vowel() + vowel() + baseSeed + consonent() + vowel() + consonent());

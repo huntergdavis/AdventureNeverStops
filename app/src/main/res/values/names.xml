@@ -46,15 +46,15 @@
     </string-array>
 
     <string-array name="suffixes">
-        <item>The First</item>
-        <item>The Second</item>
-        <item>The Third</item>
-        <item>The Fourth</item>
-        <item>The Fifth</item>
-        <item>The Sixth</item>
-        <item>The Seventh</item>
-        <item>The Eight</item>
-        <item>The Ninth</item>
+        <item>The first</item>
+        <item>The second</item>
+        <item>The third</item>
+        <item>The fourth</item>
+        <item>The fifth</item>
+        <item>The sixth</item>
+        <item>The seventh</item>
+        <item>The eight</item>
+        <item>The ninth</item>
     </string-array>
 
     <string-array name="title_prefixes">
