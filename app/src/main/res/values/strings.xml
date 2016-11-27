@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AdventureNeverStops</string>
+    <string name="app_name">Adventure NEVER Stops</string>
     <string name="action_settings">Settings</string>
     <string name="action_newgame">New Game</string>
     <string name="xp">XP</string>
@@ -17,5 +17,9 @@
     <string name="suffix_string">%1$s in a line of proud warriors, %2$s carries the weight of history.</string>
     <string name="experience_string">With only %1$d experience, %2$s has a long way to go to become a great warrior.</string>
     <string name="backstory_title_string">This is the tale of %1$s.</string>
+
+
+    <string name="current_experience">Current Experience: %d.</string>
+    <string name="title_activity_splash_screen">Adventure NEVER Stops</string>
 
 </resources>

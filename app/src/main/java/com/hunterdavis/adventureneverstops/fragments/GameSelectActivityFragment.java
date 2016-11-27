@@ -49,6 +49,14 @@ public class GameSelectActivityFragment extends Fragment {
         return view;
     }
 
+    public void onResume() {
+        super.onResume();
+
+        // force refresh for any state changes
+        adapter.notifyDataSetChanged();
+    }
+
+
     @Subscribe
     public void updatedSaveGames(GameAddedEvent event) {
         adapter.notifyDataSetChanged();

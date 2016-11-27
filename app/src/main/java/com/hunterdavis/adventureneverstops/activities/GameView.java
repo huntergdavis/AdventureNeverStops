@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
+import com.hunterdavis.adventureneverstops.engine.AdventureEngine;
 
 public class GameView extends BaseActivity {
 
@@ -17,6 +18,7 @@ public class GameView extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_view);
+        ANSApplication.getEventBus().register(this);
     }
 
 }

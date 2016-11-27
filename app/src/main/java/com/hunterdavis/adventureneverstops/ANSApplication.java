@@ -6,17 +6,19 @@ import android.content.res.Resources;
 
 import com.hunterdavis.adventureneverstops.events.GameAddedEvent;
 import com.hunterdavis.adventureneverstops.events.GameDeletedEvent;
+import com.hunterdavis.adventureneverstops.events.UiAwareEventBus;
 import com.hunterdavis.adventureneverstops.objects.game.AllGames;
 import com.hunterdavis.adventureneverstops.objects.game.GameState;
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
+import com.squareup.otto.ThreadEnforcer;
 
 /**
  * Created by hunter on 10/30/16.
  */
 public class ANSApplication extends Application {
     private static AllGames TheGames = new AllGames();
-    private static Bus eventBus = new Bus();
+    private static UiAwareEventBus eventBus = new UiAwareEventBus();
     public Activity currentActivity;
 
     private static ANSApplication applicationInstance;
