@@ -12,19 +12,16 @@
     android:background="@color/saveGameBackground"
     tools:context="com.hunterdavis.adventureneverstops.fragments.GameViewFragment"
     tools:showIn="@layout/activity_game_view">
-
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/history_text"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:id="@+id/current_exp"/>
-
-
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.hunterdavis.adventureneverstops.views.PrologueView
+                android:id="@+id/prologue_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

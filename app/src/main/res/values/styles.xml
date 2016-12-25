@@ -25,11 +25,14 @@
     </style>
 
     <style name="SaveGameListItem">
-        <item name="android:background">@drawable/save_game_background</item>
+        <item name="android:background">@drawable/circle_pipe_background</item>
         <item name="android:layout_margin">2dp</item>
         <item name="android:padding">@dimen/save_game_margin</item>
+    </style>
 
-
+    <style name="Prologue">
+        <item name="android:background">@drawable/prologue_background</item>
+        <item name="android:padding">@dimen/save_game_margin</item>
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">

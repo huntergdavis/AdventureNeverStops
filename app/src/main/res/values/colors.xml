@@ -10,6 +10,9 @@
     <color name="SaveGameListTextColor">@android:color/white</color>
     <color name="SaveGameDeleteButtonColor">#E50000</color>
 
+    <color name="PrologueBackgroundColor">#05B8CC</color>
+
+
     <color name="black_overlay">#66000000</color>
 
 </resources>

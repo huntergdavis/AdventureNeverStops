@@ -1,29 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.hunterdavis.adventureneverstops.views.PrologueView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ccc"
-        android:paddingBottom="40dp"
-        android:paddingLeft="20dp">
-
+    android:layout_height="match_parent"
+    style="@style/Prologue"
+    >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:id="@+id/history_text"
             />
 
         <TextView
+            android:paddingLeft="4dp"
+            android:paddingTop="@dimen/activity_vertical_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:id="@+id/current_exp"/>
 
-
-        </com.hunterdavis.adventureneverstops.views.PrologueView>
-
-</FrameLayout>
+</LinearLayout>
