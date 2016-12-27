@@ -1,4 +1,4 @@
-package com.hunterdavis.adventureneverstops.views;
+package com.hunterdavis.adventureneverstops.views.maps;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -26,7 +26,7 @@ public class MapView extends View {
         init(attrs, defStyle);
     }
 
-    private void init(AttributeSet attrs, int defStyle) {
+    public void init(AttributeSet attrs, int defStyle) {
         // Load attributes
         final TypedArray a = getContext().obtainStyledAttributes(
                 attrs, R.styleable.MapView, defStyle, 0);

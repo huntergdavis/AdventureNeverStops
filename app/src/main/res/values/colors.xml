@@ -15,4 +15,11 @@
 
     <color name="black_overlay">#66000000</color>
 
+    <color name="dungeon_map_color_1">#351330</color>
+    <color name="dungeon_map_color_2">#64908A</color>
+    <color name="dungeon_map_color_3">#add3ff</color>
+
+
+
+
 </resources>

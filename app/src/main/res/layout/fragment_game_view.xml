@@ -16,12 +16,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.hunterdavis.adventureneverstops.views.PrologueView
                 android:id="@+id/prologue_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <com.hunterdavis.adventureneverstops.views.maps.DungeonMapView
+                android:id="@+id/dungeon_map"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
