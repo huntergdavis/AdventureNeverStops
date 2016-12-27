@@ -22,4 +22,7 @@
     <string name="current_experience">Current Experience: %d.</string>
     <string name="title_activity_splash_screen">Adventure NEVER Stops</string>
 
+    <string name="dungeon_map">Dungeon Map</string>
+
+
 </resources>

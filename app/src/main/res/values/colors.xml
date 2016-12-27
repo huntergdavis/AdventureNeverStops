@@ -15,10 +15,13 @@
 
     <color name="black_overlay">#66000000</color>
 
-    <color name="dungeon_map_color_1">#351330</color>
-    <color name="dungeon_map_color_2">#64908A</color>
-    <color name="dungeon_map_color_3">#add3ff</color>
+    <color name="dungeon_map_outside_color">#351330</color>
+    <color name="dungeon_map_room_color">#64908A</color>
+    <color name="dungeon_map_wall_color">#add3ff</color>
+    <color name="dungeon_map_user_color">@android:color/holo_red_light</color>
 
+
+    <color name="dungeon_map_text">@android:color/white</color>
 
 
 

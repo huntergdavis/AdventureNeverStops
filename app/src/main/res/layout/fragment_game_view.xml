@@ -26,6 +26,8 @@
 
             <com.hunterdavis.adventureneverstops.views.maps.DungeonMapView
                 android:id="@+id/dungeon_map"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"/>
 

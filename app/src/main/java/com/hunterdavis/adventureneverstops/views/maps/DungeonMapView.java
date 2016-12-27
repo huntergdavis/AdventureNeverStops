@@ -5,16 +5,24 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 
+import com.hunterdavis.adventureneverstops.ANSApplication;
 import com.hunterdavis.adventureneverstops.R;
+import com.hunterdavis.adventureneverstops.events.HeroUpdatedEvent;
+import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 
 public class DungeonMapView extends MapView {
     private final static int MAP_SIZE = 64;
+    private final static int NUMBER_OF_EXP_PER_MOVEMENT = 20;
+    private final static int NUMBER_OF_EXP_PER_MAP_REFRESH = 100;
+
 
     private ArrayList<Room> rooms = new ArrayList<>();
     double generatedMap[][] = null;
+    int numberOfRoomTilesInGeneratedMap = 0;
 
 
     public DungeonMapView(Context context) {
@@ -36,8 +44,29 @@ public class DungeonMapView extends MapView {
                 attrs, R.styleable.MapView, defStyle, 0);
 
         a.recycle();
+
+
+        ANSApplication.getEventBus().register(this);
     }
 
+    @Subscribe
+    public void updateHero(HeroUpdatedEvent heroUpdatedEvent) {
+        long currentHeroExperience = heroUpdatedEvent.hero.experience;
+        if(currentHeroExperience %NUMBER_OF_EXP_PER_MOVEMENT == 0) {
+            // change hero position
+
+            invalidate();
+        }
+        if(currentHeroExperience %NUMBER_OF_EXP_PER_MAP_REFRESH == 0) {
+
+            // change the entire dungeon
+            generatedMap = generateDungeonMap();
+            invalidate();
+        }
+
+
+
+    }
 
 
     public int getRandom(int low, int high) {
@@ -131,7 +160,16 @@ public class DungeonMapView extends MapView {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < this.rooms.size(); j++) {
                 Room room = this.rooms.get(j);
+
+
+                int iteratorStop = 0;
                 while (true) {
+                    iteratorStop++;
+                    if(iteratorStop > 64) {
+                        break;
+                    }
+
+
                     Room oldPosition = new Room();
                     oldPosition.x = room.x;
                     oldPosition.y = room.y;
@@ -189,7 +227,13 @@ public class DungeonMapView extends MapView {
             Room pointB = new Room(getRandom(roomB.x, roomB.x + roomB.w),getRandom(roomB.y, roomB.y + roomB.h));
 
 
+            int iteratorStop = 0;
             while ((pointB.x != pointA.x) || (pointB.y != pointA.y)) {
+                iteratorStop++;
+                if(iteratorStop == 100) {
+                    // this should never hit 100 iterations
+                    break;
+                }
                 if (pointB.x != pointA.x) {
                     if (pointB.x > pointA.x) pointB.x--;
                     else pointB.x++;
@@ -223,6 +267,20 @@ public class DungeonMapView extends MapView {
             }
         }
 
+
+        // calculate number of room tiles in map;
+        int numRoomTilesInMap = 0;
+        for (int x = 0; x < MAP_SIZE; x++) {
+            for (int y = 0; y < MAP_SIZE; y++) {
+                if (map[x][y] == 1) {
+                    numRoomTilesInMap++;
+                }
+            }
+        }
+
+        numberOfRoomTilesInGeneratedMap = numRoomTilesInMap;
+
+
         return map;
     }
 
@@ -252,33 +310,62 @@ public class DungeonMapView extends MapView {
         double scale = contentWidth /  MAP_SIZE;
 
         this.rooms = new ArrayList<>();
-        generatedMap = generateDungeonMap();
+        if(generatedMap == null) {
+            generatedMap = generateDungeonMap();
+        }
 
         // create the Paint and set its color
         Paint paint = new Paint();
 
-
+        int playerRoom = getRandom(1, numberOfRoomTilesInGeneratedMap -1);
+        int roomTilesDrawn = 0;
+        boolean drawUserThisRound = false;
         for (int y = 0; y < MAP_SIZE; y++) {
             for (int x = 0; x < MAP_SIZE; x++) {
                 double tile = generatedMap[x][y];
                 if (tile == 0) {
-                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_color_1));
+                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_outside_color));
                 }
                 else if (tile == 1) {
-                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_color_2));
+                    roomTilesDrawn++;
+
+                    // draw us a nice 'you are here' dot
+                    if(roomTilesDrawn == playerRoom) {
+                        drawUserThisRound = true;
+                    }
+
+                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_room_color));
+
                 }
                 else  {
-                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_color_3));
+                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_wall_color));
                 }
 
-                float left = (float) (x * scale);
-                float top = (float) (y * scale);
+                float left = (float) (paddingLeft +  (x * scale));
+                float top = (float) (paddingTop +  (y * scale));
                 float right = (float)(left + scale);
                 float bottom = (float)(top + scale);
 
+                // draw the dungeon
                 canvas.drawRect(left,top, right, bottom, paint);
+
+                if(drawUserThisRound == true) {
+                    drawUserThisRound = false;
+
+                    paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_user_color));
+                    canvas.drawCircle((float)(paddingLeft + x*scale), (float)(paddingTop + y*scale), (float)(scale), paint);
+                }
             }
         }
+
+
+        // paint 'dungeon map' text
+        paint.setColor(getContext().getResources().getColor(R.color.dungeon_map_text));
+        int fontSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                20, getResources().getDisplayMetrics());
+        paint.setTextSize(fontSize);
+        canvas.drawText(getContext().getString(R.string.dungeon_map), 60, contentHeight - 30, paint);
+
     }
 
 }
